@@ -1,0 +1,1632 @@
+/* =====================================================
+   CYBERSAFE
+   PHISHING, SCAM & FRAUD DETECTION AWARENESS PROGRAM
+   MAIN STYLE SHEET
+   ===================================================== */
+
+
+/* =====================================================
+   1. GENERAL
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   2. NAVIGATION BAR
+   ===================================================== */
+
+nav {
+    width: 100%;
+    min-height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 6%;
+
+    background-color: #0f172a;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+
+    color: #38bdf8;
+
+    letter-spacing: 1px;
+}
+
+
+/* Menu */
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.menu a {
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 8px 5px;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+
+/* =====================================================
+   3. HOME PAGE - HERO
+   ===================================================== */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(37, 99, 235, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(56, 189, 248, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a,
+            #1e293b
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+    color: white;
+}
+
+
+/* Welcome Text */
+
+.welcome-text {
+    color: #38bdf8;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Hero Heading */
+
+.hero h1 {
+    font-size: 64px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    color: #38bdf8;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    font-size: 18px;
+
+    color: #e2e8f0;
+}
+
+
+/* =====================================================
+   4. BUTTONS
+   ===================================================== */
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    margin: 5px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+.second-btn {
+    background-color: #475569;
+}
+
+.second-btn:hover {
+    background-color: #334155;
+}
+
+
+/* =====================================================
+   5. INTRODUCTION SECTION
+   ===================================================== */
+
+.intro {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    color: #0f172a;
+}
+
+.intro h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    color: #1e3a8a;
+}
+
+.intro p {
+    max-width: 850px;
+
+    margin: 0 auto 10px;
+
+    font-size: 17px;
+
+    color: #475569;
+}
+
+
+/* Section Label */
+
+.section-label {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   6. HOME - COMMON THREATS
+   ===================================================== */
+
+.threat-section {
+    padding: 80px 6%;
+
+    text-align: center;
+
+    background-color: #ffffff;
+}
+
+.threat-section h2 {
+    font-size: 38px;
+
+    color: #0f172a;
+
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: #64748b;
+
+    margin-bottom: 40px;
+
+    font-size: 17px;
+}
+
+
+/* Threat Container */
+
+.threat-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Threat Card */
+
+.threat-card {
+    width: 260px;
+
+    min-height: 300px;
+
+    padding: 30px 25px;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    text-align: left;
+
+    transition: 0.3s;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.threat-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #38bdf8;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.threat-icon {
+    font-size: 42px;
+
+    margin-bottom: 18px;
+}
+
+.threat-card h3 {
+    font-size: 22px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 12px;
+}
+
+.threat-card p {
+    font-size: 15px;
+
+    color: #64748b;
+
+    margin-bottom: 20px;
+}
+
+.threat-card a {
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+.threat-card a:hover {
+    color: #1d4ed8;
+}
+
+
+/* =====================================================
+   7. HOME - WARNING SECTION
+   ===================================================== */
+
+.warning-section {
+    padding: 55px 8%;
+
+    background-color: #fff7ed;
+}
+
+.warning-content {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    border-left: 6px solid #f97316;
+}
+
+.warning-icon {
+    font-size: 45px;
+}
+
+.warning-content h2 {
+    color: #9a3412;
+
+    margin-bottom: 8px;
+}
+
+.warning-content p {
+    color: #7c2d12;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   8. HOME - SAFETY FEATURES
+   ===================================================== */
+
+.features {
+    padding: 80px 6%;
+
+    text-align: center;
+
+    background-color: #f1f5f9;
+}
+
+.features h2 {
+    font-size: 36px;
+
+    color: #0f172a;
+
+    margin-bottom: 40px;
+}
+
+.feature-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 240px;
+
+    padding: 30px 20px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+}
+
+.feature-card span {
+    font-size: 38px;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+
+/* =====================================================
+   9. CALL TO ACTION
+   ===================================================== */
+
+.cta {
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #2563eb
+        );
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+    color: #dbeafe;
+}
+
+.cta .btn {
+    background-color: white;
+
+    color: #1d4ed8;
+}
+
+.cta .btn:hover {
+    background-color: #e0f2fe;
+}
+
+
+/* =====================================================
+   10. INNER PAGE HEADER
+   ===================================================== */
+
+.page-header {
+    padding: 75px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    color: white;
+}
+
+.page-header p:first-child {
+    color: #38bdf8;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.page-header h1 {
+    font-size: 45px;
+
+    margin: 15px 0;
+}
+
+.page-header p:last-child {
+    color: #dbeafe;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   11. ABOUT PAGE - OBJECTIVES
+   ===================================================== */
+
+.objective-list {
+    max-width: 1100px;
+
+    margin: 35px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.objective-card {
+    width: 240px;
+
+    padding: 25px;
+
+    background-color: #f8fafc;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.3s;
+}
+
+.objective-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.objective-card span {
+    font-size: 35px;
+}
+
+.objective-card h3 {
+    color: #1e3a8a;
+
+    margin: 12px 0;
+}
+
+.objective-card p {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   12. TYPES OF SCAMS
+   ===================================================== */
+
+.scam-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.scam-card {
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.scam-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #38bdf8;
+}
+
+.scam-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.scam-card h2 {
+    color: #1e3a8a;
+
+    margin-bottom: 20px;
+}
+
+.scam-card h3 {
+    color: #334155;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+}
+
+.scam-card p {
+    color: #64748b;
+}
+
+.scam-card ul {
+    padding-left: 20px;
+
+    color: #64748b;
+}
+
+.scam-card li {
+    margin: 7px 0;
+}
+
+
+/* =====================================================
+   13. SCAM DETECTOR
+   ===================================================== */
+
+.detector-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 30px;
+}
+
+.detector-box {
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.message-label {
+    color: #2563eb;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.fake-message {
+    padding: 25px;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+}
+
+.fake-message p {
+    margin-bottom: 10px;
+}
+
+.fake-link {
+    color: #dc2626;
+
+    font-weight: bold;
+}
+
+.detector-buttons {
+    display: flex;
+
+    gap: 15px;
+}
+
+.detector-buttons button {
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.detector-buttons button:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+#detector-result {
+    margin-top: 25px;
+}
+
+.correct-result,
+.wrong-result {
+    padding: 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.correct-result {
+    background-color: #dcfce7;
+
+    color: #166534;
+}
+
+.wrong-result {
+    background-color: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+/* Warning List */
+
+.warning-list {
+    padding: 30px;
+
+    background-color: #fff7ed;
+
+    border-radius: 14px;
+}
+
+.warning-list h2 {
+    color: #9a3412;
+
+    margin-bottom: 20px;
+}
+
+.warning-item {
+    padding: 12px;
+
+    margin: 10px 0;
+
+    background-color: white;
+
+    border-radius: 7px;
+}
+
+
+/* =====================================================
+   14. SAFETY TIPS
+   ===================================================== */
+
+.safety-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.safety-card {
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.safety-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #38bdf8;
+}
+
+.safety-card span {
+    font-size: 42px;
+}
+
+.safety-card h2 {
+    font-size: 20px;
+
+    color: #1e3a8a;
+
+    margin: 15px 0;
+}
+
+.safety-card p {
+    color: #64748b;
+}
+
+
+/* =====================================================
+   15. DO & DON'T
+   ===================================================== */
+
+.do-dont-section {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 50px 20px 80px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.do-box,
+.dont-box {
+    padding: 30px;
+
+    border-radius: 12px;
+}
+
+.do-box {
+    background-color: #ecfdf5;
+}
+
+.dont-box {
+    background-color: #fef2f2;
+}
+
+.do-box h2 {
+    color: #166534;
+}
+
+.dont-box h2 {
+    color: #991b1b;
+}
+
+.do-box li,
+.dont-box li {
+    margin: 12px 0;
+}
+
+
+/* =====================================================
+   16. QUIZ
+   ===================================================== */
+
+.quiz-section {
+    padding: 70px 20px;
+}
+
+.quiz-container {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.question {
+    background-color: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.question h2 {
+    font-size: 21px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 20px;
+}
+
+.question label {
+    display: block;
+
+    padding: 13px;
+
+    margin: 8px 0;
+
+    background-color: #f8fafc;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.question label:hover {
+    background-color: #e0f2fe;
+}
+
+.question input {
+    margin-right: 10px;
+}
+
+.quiz-submit {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.quiz-submit:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+#quiz-result {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background-color: #eff6ff;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: #1e3a8a;
+}
+
+
+/* =====================================================
+   17. OLD / SIMPLE QUIZ SUPPORT
+   ===================================================== */
+
+.quiz-box {
+    max-width: 750px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    text-align: left;
+}
+
+.quiz-box h3 {
+    color: #1e3a8a;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.quiz-box p {
+    margin-bottom: 20px;
+}
+
+.quiz-box button {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin: 12px 0;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.quiz-box button:hover {
+    background-color: #1d4ed8;
+
+    transform: translateX(4px);
+}
+
+#result {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    background-color: #f1f5f9;
+}
+
+
+/* =====================================================
+   18. SURVEY
+   ===================================================== */
+
+.survey-section {
+    padding: 80px 20px;
+}
+
+.survey-box {
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 50px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.survey-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.survey-box h2 {
+    color: #1e3a8a;
+
+    margin-bottom: 15px;
+}
+
+.survey-box p {
+    color: #64748b;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   19. CONTACT
+   ===================================================== */
+
+.contact-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+}
+
+.contact-info {
+    padding: 30px;
+}
+
+.contact-info h2 {
+    color: #1e3a8a;
+
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    color: #64748b;
+
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    padding: 20px;
+
+    margin: 15px 0;
+
+    background-color: #f8fafc;
+
+    border-radius: 10px;
+}
+
+.contact-item strong {
+    display: block;
+
+    margin: 5px 0;
+
+    color: #334155;
+}
+
+.contact-item p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.contact-form {
+    margin: 0;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   20. GENERAL FORM
+   ===================================================== */
+
+form {
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    text-align: left;
+}
+
+form label {
+    display: block;
+
+    font-weight: bold;
+
+    color: #334155;
+
+    margin-top: 12px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 7px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    padding: 12px 25px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =====================================================
+   21. FOOTER
+   ===================================================== */
+
+footer {
+    padding: 25px 15px;
+
+    text-align: center;
+
+    background-color: #0f172a;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* =====================================================
+   22. RESPONSIVE - TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .scam-section {
+        grid-template-columns: 1fr;
+    }
+
+    .safety-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================================
+   23. RESPONSIVE - MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        position: relative;
+
+        padding: 18px 15px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .menu {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 5px;
+    }
+
+    .menu a {
+        display: block;
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 7px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 500px;
+
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    /* Buttons */
+
+    .btn {
+        display: block;
+
+        max-width: 250px;
+
+        margin: 10px auto;
+    }
+
+
+    /* Intro */
+
+    .intro {
+        padding: 55px 20px;
+    }
+
+    .intro h1 {
+        font-size: 32px;
+    }
+
+    .intro h2 {
+        font-size: 25px;
+    }
+
+
+    /* Threats */
+
+    .threat-section {
+        padding: 60px 20px;
+    }
+
+    .threat-section h2 {
+        font-size: 30px;
+    }
+
+    .threat-card {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* Warning */
+
+    .warning-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        border-left: none;
+
+        border-top: 5px solid #f97316;
+    }
+
+
+    /* Features */
+
+    .features {
+        padding: 60px 20px;
+    }
+
+    .features h2 {
+        font-size: 30px;
+    }
+
+    .feature-card {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* Page Header */
+
+    .page-header {
+        padding: 60px 20px;
+    }
+
+    .page-header h1 {
+        font-size: 35px;
+    }
+
+
+    /* Scam Cards */
+
+    .scam-section {
+        grid-template-columns: 1fr;
+
+        padding: 50px 20px;
+    }
+
+
+    /* Detector */
+
+    .detector-section {
+        grid-template-columns: 1fr;
+
+        padding: 50px 20px;
+    }
+
+    .detector-buttons {
+        flex-direction: column;
+    }
+
+    .detector-buttons button {
+        width: 100%;
+    }
+
+
+    /* Safety */
+
+    .safety-section {
+        grid-template-columns: 1fr;
+
+        padding: 50px 20px;
+    }
+
+
+    /* Do & Don't */
+
+    .do-dont-section {
+        grid-template-columns: 1fr;
+
+        padding: 40px 20px 60px;
+    }
+
+
+    /* Quiz */
+
+    .quiz-section {
+        padding: 50px 15px;
+    }
+
+    .question {
+        padding: 22px;
+    }
+
+    .quiz-box {
+        padding: 25px 18px;
+    }
+
+
+    /* Survey */
+
+    .survey-section {
+        padding: 60px 15px;
+    }
+
+    .survey-box {
+        padding: 30px 20px;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        padding: 50px 15px;
+    }
+
+    .contact-info {
+        padding: 10px;
+    }
+
+
+    /* Forms */
+
+    form {
+        padding: 25px 18px;
+    }
+
+}
