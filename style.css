@@ -1,185 +1,126 @@
 /* =====================================================
-   CYBERSAFE
-   PHISHING, SCAM & FRAUD DETECTION AWARENESS PROGRAM
-   MAIN STYLE SHEET
+   CYBERSAFE — CORPORATE CYBER THEME
+   Main Stylesheet
    ===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
 
 /* =====================================================
-   1. GENERAL
+   1. RESET & BASE
    ===================================================== */
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f8fafc;
-    color: #1e293b;
+    background-color: #0b1120;
+    color: #cbd5e1;
 }
 
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
 
-button,
-input,
-textarea {
-    font-family: Arial, sans-serif;
+button, input, textarea, select { font-family: inherit; }
+
+h1, h2, h3 { color: #f1f5f9; }
+
+
+/* =====================================================
+   2. NETWORK PARTICLES CANVAS
+   ===================================================== */
+
+#matrixCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    opacity: 0.15;
 }
 
 
 /* =====================================================
-   2. NAVIGATION BAR
+   3. NAVIGATION BAR
    ===================================================== */
 
 nav {
     width: 100%;
-    min-height: 75px;
-
+    min-height: 70px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
     padding: 15px 6%;
-
-    background-color: #0f172a;
-
+    background-color: rgba(11, 17, 32, 0.85);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
     position: sticky;
     top: 0;
-
     z-index: 1000;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
 }
-
-
-/* Logo */
 
 .logo {
-    font-size: 30px;
-    font-weight: bold;
-
-    color: #38bdf8;
-
+    position: absolute;
+    left: 6%;
+    font-size: 24px;
+    font-weight: 700;
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
+.menu-toggle {
+    position: absolute;
+    right: 6%;
+    width: 44px;
+    height: 44px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.28);
+    border-radius: 8px;
+    cursor: pointer;
+}
 
-/* Menu */
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+    background-color: #00f0ff;
+    border-radius: 999px;
+    transition: transform 0.2s, opacity 0.2s;
+}
 
 .menu {
     display: flex;
     align-items: center;
-
-    gap: 18px;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .menu a {
-    color: white;
-
+    color: #94a3b8;
     font-size: 14px;
-    font-weight: 500;
-
-    padding: 8px 5px;
-
-    transition: 0.3s;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
 }
 
-.menu a:hover {
-    color: #38bdf8;
-}
-
-
-/* =====================================================
-   3. HOME PAGE - HERO
-   ===================================================== */
-
-.hero {
-    min-height: 620px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 60px 20px;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            rgba(37, 99, 235, 0.25),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(56, 189, 248, 0.18),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #020617,
-            #0f172a,
-            #1e293b
-        );
-}
-
-.hero-content {
-    max-width: 850px;
-    color: white;
-}
-
-
-/* Welcome Text */
-
-.welcome-text {
-    color: #38bdf8;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-}
-
-
-/* Hero Heading */
-
-.hero h1 {
-    font-size: 64px;
-
-    margin-bottom: 15px;
-
-    font-weight: 700;
-}
-
-.hero h2 {
-    font-size: 30px;
-
-    margin-bottom: 20px;
-
-    color: #38bdf8;
-}
-
-.hero p {
-    max-width: 700px;
-
-    margin: 0 auto 35px;
-
-    font-size: 18px;
-
-    color: #e2e8f0;
+.menu a:hover,
+.menu a[aria-current="page"] {
+    color: #00f0ff;
+    background-color: rgba(0, 240, 255, 0.08);
 }
 
 
@@ -187,1152 +128,663 @@ nav {
    4. BUTTONS
    ===================================================== */
 
-.buttons {
-    margin-top: 20px;
-}
-
 .btn {
     display: inline-block;
-
-    padding: 13px 28px;
-
+    padding: 12px 26px;
     margin: 5px;
-
-    background-color: #2563eb;
-
-    color: white;
-
-    border-radius: 7px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
+    background-color: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    border: 1px solid #00f0ff;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
-    background-color: #1d4ed8;
-
-    transform: translateY(-2px);
+    background-color: #00f0ff;
+    color: #0b1120;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
 }
 
 .second-btn {
-    background-color: #475569;
+    background: transparent;
+    border-color: #475569;
+    color: #e2e8f0;
+    box-shadow: none;
 }
 
 .second-btn:hover {
-    background-color: #334155;
+    background-color: #475569;
+    color: #fff;
+}
+
+.buttons { margin-top: 20px; }
+
+
+/* =====================================================
+   5. SECTION LABELS
+   ===================================================== */
+
+.section-label {
+    color: #00f0ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.threat-card,
+.feature-card,
+.objective-card,
+.scam-card,
+.detector-box,
+.safety-card,
+.question,
+.survey-box {
+    background-color: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.threat-card,
+.feature-card,
+.objective-card,
+.scam-card,
+.detector-box,
+.safety-card,
+.question {
+    border-radius: 12px;
+}
+
+.threat-card,
+.objective-card,
+.scam-card,
+.detector-box,
+.safety-card,
+.survey-box {
+    border: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+.threat-card,
+.feature-card,
+.scam-card,
+.detector-box,
+.safety-card,
+.survey-box {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 
 /* =====================================================
-   5. INTRODUCTION SECTION
+   6. HERO SECTION
+   ===================================================== */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+}
+
+.hero-content { max-width: 850px; }
+
+.welcome-text {
+    color: #00f0ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    color: #00f0ff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    font-size: 17px;
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   7. INTRO SECTION
    ===================================================== */
 
 .intro {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 80px 30px;
-
     text-align: center;
-}
-
-.intro h1 {
-    font-size: 42px;
-
-    margin-bottom: 20px;
-
-    color: #0f172a;
 }
 
 .intro h2 {
     font-size: 30px;
-
     margin-bottom: 20px;
-
-    color: #1e3a8a;
 }
 
 .intro p {
     max-width: 850px;
-
-    margin: 0 auto 10px;
-
-    font-size: 17px;
-
-    color: #475569;
-}
-
-
-/* Section Label */
-
-.section-label {
-    color: #2563eb;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 10px;
-}
-
-
-/* =====================================================
-   6. HOME - COMMON THREATS
-   ===================================================== */
-
-.threat-section {
-    padding: 80px 6%;
-
-    text-align: center;
-
-    background-color: #ffffff;
-}
-
-.threat-section h2 {
-    font-size: 38px;
-
-    color: #0f172a;
-
-    margin-bottom: 10px;
-}
-
-.section-description {
-    color: #64748b;
-
-    margin-bottom: 40px;
-
-    font-size: 17px;
-}
-
-
-/* Threat Container */
-
-.threat-container {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
-}
-
-
-/* Threat Card */
-
-.threat-card {
-    width: 260px;
-
-    min-height: 300px;
-
-    padding: 30px 25px;
-
-    background-color: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 14px;
-
-    text-align: left;
-
-    transition: 0.3s;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-}
-
-.threat-card:hover {
-    transform: translateY(-10px);
-
-    border-color: #38bdf8;
-
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-}
-
-.threat-icon {
-    font-size: 42px;
-
-    margin-bottom: 18px;
-}
-
-.threat-card h3 {
-    font-size: 22px;
-
-    color: #1e3a8a;
-
-    margin-bottom: 12px;
-}
-
-.threat-card p {
-    font-size: 15px;
-
-    color: #64748b;
-
-    margin-bottom: 20px;
-}
-
-.threat-card a {
-    color: #2563eb;
-
-    font-weight: bold;
-}
-
-.threat-card a:hover {
-    color: #1d4ed8;
-}
-
-
-/* =====================================================
-   7. HOME - WARNING SECTION
-   ===================================================== */
-
-.warning-section {
-    padding: 55px 8%;
-
-    background-color: #fff7ed;
-}
-
-.warning-content {
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding: 30px;
-
-    border-left: 6px solid #f97316;
-}
-
-.warning-icon {
-    font-size: 45px;
-}
-
-.warning-content h2 {
-    color: #9a3412;
-
-    margin-bottom: 8px;
-}
-
-.warning-content p {
-    color: #7c2d12;
-
+    margin: 0 auto 14px;
     font-size: 16px;
 }
 
 
 /* =====================================================
-   8. HOME - SAFETY FEATURES
+   8. THREAT CARDS (Home)
+   ===================================================== */
+
+.threat-section {
+    padding: 80px 6%;
+    text-align: center;
+    background-color: rgba(15, 23, 42, 0.4);
+}
+
+.threat-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.threat-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.threat-card {
+    width: 260px;
+    min-height: 280px;
+    padding: 28px 24px;
+    text-align: left;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(8px);
+}
+
+.threat-card:hover {
+    transform: translateY(-8px);
+    border-color: #00f0ff;
+    box-shadow: 0 12px 30px rgba(0, 240, 255, 0.15);
+}
+
+.threat-icon { font-size: 40px; margin-bottom: 16px; }
+
+.threat-card h3 { font-size: 20px; margin-bottom: 10px; }
+
+.threat-card p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+.threat-card a { color: #00f0ff; font-weight: 600; font-size: 14px; }
+.threat-card a:hover { text-decoration: underline; }
+
+
+/* =====================================================
+   9. WARNING BANNER (Home)
+   ===================================================== */
+
+.warning-section {
+    padding: 50px 8%;
+    background-color: rgba(120, 53, 15, 0.15);
+    border-top: 1px solid rgba(249, 115, 22, 0.3);
+    border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.warning-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    border-left: 4px solid #f97316;
+    border-radius: 4px;
+}
+
+.warning-icon { font-size: 42px; flex-shrink: 0; }
+
+.warning-content h2 { color: #fb923c; margin-bottom: 6px; }
+
+
+/* =====================================================
+   10. SAFETY FEATURES (Home)
    ===================================================== */
 
 .features {
     padding: 80px 6%;
-
     text-align: center;
-
-    background-color: #f1f5f9;
 }
 
-.features h2 {
-    font-size: 36px;
-
-    color: #0f172a;
-
-    margin-bottom: 40px;
-}
+.features h2 { font-size: 34px; margin-bottom: 40px; }
 
 .feature-container {
     max-width: 1100px;
-
     margin: auto;
-
     display: flex;
-
     justify-content: center;
-
-    gap: 25px;
-
+    gap: 24px;
     flex-wrap: wrap;
 }
 
 .feature-card {
     width: 240px;
-
-    padding: 30px 20px;
-
-    background-color: white;
-
-    border-radius: 12px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
-
-    transition: 0.3s;
+    padding: 28px 20px;
+    border: 1px solid rgba(0, 240, 255, 0.12);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.feature-card:hover {
-    transform: translateY(-7px);
-}
+.feature-card:hover { transform: translateY(-6px); border-color: #00f0ff; }
 
-.feature-card span {
-    font-size: 38px;
+.feature-card span { font-size: 36px; display: block; margin-bottom: 14px; }
 
-    display: block;
+.feature-card h3 { font-size: 17px; margin-bottom: 8px; }
 
-    margin-bottom: 15px;
-}
-
-.feature-card h3 {
-    font-size: 18px;
-
-    color: #1e3a8a;
-
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    font-size: 14px;
-
-    color: #64748b;
-}
+.feature-card p { font-size: 14px; color: #64748b; }
 
 
 /* =====================================================
-   9. CALL TO ACTION
+   11. CALL TO ACTION
    ===================================================== */
 
 .cta {
-    padding: 80px 20px;
-
+    padding: 70px 20px;
+    margin: 40px auto;
+    max-width: 800px;
     text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1d4ed8,
-            #2563eb
-        );
-
-    color: white;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.9));
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 16px;
 }
 
-.cta h2 {
-    font-size: 38px;
+.cta h2 { font-size: 36px; margin-bottom: 14px; }
 
-    margin-bottom: 15px;
-}
-
-.cta p {
-    font-size: 17px;
-
-    margin-bottom: 25px;
-
-    color: #dbeafe;
-}
-
-.cta .btn {
-    background-color: white;
-
-    color: #1d4ed8;
-}
-
-.cta .btn:hover {
-    background-color: #e0f2fe;
-}
+.cta p { font-size: 16px; margin-bottom: 24px; color: #94a3b8; }
 
 
 /* =====================================================
-   10. INNER PAGE HEADER
+   12. PAGE HEADER (Inner pages)
    ===================================================== */
 
 .page-header {
-    padding: 75px 20px;
-
+    padding: 70px 20px;
     text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f172a,
-            #1e3a8a
-        );
-
-    color: white;
+    background: linear-gradient(135deg, rgba(11, 17, 32, 0.9), rgba(30, 58, 138, 0.6));
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
 }
 
 .page-header p:first-child {
-    color: #38bdf8;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
+    color: #00f0ff;
+    font-size: 12px;
+    font-weight: 700;
     letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
-.page-header h1 {
-    font-size: 45px;
+.page-header h1 { font-size: 44px; margin-bottom: 12px; }
 
-    margin: 15px 0;
-}
-
-.page-header p:last-child {
-    color: #dbeafe;
-
-    font-size: 17px;
-}
+.page-header p:last-child { color: #94a3b8; font-size: 16px; }
 
 
 /* =====================================================
-   11. ABOUT PAGE - OBJECTIVES
+   13. ABOUT — OBJECTIVES
    ===================================================== */
 
 .objective-list {
     max-width: 1100px;
-
-    margin: 35px auto;
-
+    margin: 35px auto 0;
     display: flex;
-
     justify-content: center;
-
     gap: 20px;
-
     flex-wrap: wrap;
 }
 
 .objective-card {
     width: 240px;
-
-    padding: 25px;
-
-    background-color: #f8fafc;
-
-    border-radius: 12px;
-
-    border: 1px solid #e2e8f0;
-
-    transition: 0.3s;
+    padding: 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .objective-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.12);
 }
 
-.objective-card span {
-    font-size: 35px;
-}
+.objective-card span { font-size: 32px; }
 
-.objective-card h3 {
-    color: #1e3a8a;
+.objective-card h3 { font-size: 16px; margin: 10px 0 6px; }
 
-    margin: 12px 0;
-}
-
-.objective-card p {
-    font-size: 14px;
-}
+.objective-card p { font-size: 14px; }
 
 
 /* =====================================================
-   12. TYPES OF SCAMS
+   14. TYPES OF SCAMS
    ===================================================== */
 
 .scam-section {
     max-width: 1200px;
-
     margin: auto;
-
     padding: 70px 20px;
-
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
+    gap: 24px;
 }
 
 .scam-card {
-    padding: 30px;
-
-    background-color: white;
-
-    border-radius: 14px;
-
-    border: 1px solid #e2e8f0;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
-
-    transition: 0.3s;
+    padding: 28px;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.scam-card:hover {
-    transform: translateY(-6px);
+.scam-card:hover { transform: translateY(-5px); border-color: #00f0ff; }
 
-    border-color: #38bdf8;
-}
+.scam-icon { font-size: 40px; margin-bottom: 10px; }
 
-.scam-icon {
-    font-size: 45px;
-
-    margin-bottom: 10px;
-}
-
-.scam-card h2 {
-    color: #1e3a8a;
-
-    margin-bottom: 20px;
-}
+.scam-card h2 { margin-bottom: 16px; }
 
 .scam-card h3 {
-    color: #334155;
-
-    margin-top: 15px;
-
-    margin-bottom: 7px;
-}
-
-.scam-card p {
     color: #64748b;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 16px;
+    margin-bottom: 8px;
 }
 
-.scam-card ul {
-    padding-left: 20px;
+.scam-card p { font-size: 15px; }
 
-    color: #64748b;
-}
+.scam-card ul { padding-left: 20px; font-size: 15px; }
 
-.scam-card li {
-    margin: 7px 0;
-}
+.scam-card li { margin: 6px 0; }
 
 
 /* =====================================================
-   13. SCAM DETECTOR
+   15. SCAM DETECTOR
    ===================================================== */
 
 .detector-section {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 70px 20px;
-
     display: grid;
-
     grid-template-columns: 2fr 1fr;
-
-    gap: 30px;
+    gap: 28px;
 }
 
 .detector-box {
-    background-color: white;
-
-    padding: 35px;
-
-    border-radius: 14px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 32px;
 }
 
 .message-label {
-    color: #2563eb;
-
-    font-weight: bold;
-
-    margin-bottom: 15px;
+    color: #00f0ff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
 }
 
 .fake-message {
-    padding: 25px;
-
-    background-color: #f8fafc;
-
-    border: 1px solid #cbd5e1;
-
-    border-radius: 10px;
-
-    margin-bottom: 25px;
+    padding: 22px;
+    background-color: rgba(220, 38, 38, 0.05);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    border-radius: 8px;
+    margin-bottom: 22px;
 }
 
-.fake-message p {
-    margin-bottom: 10px;
-}
+.fake-message p { margin-bottom: 8px; font-size: 15px; }
 
-.fake-link {
-    color: #dc2626;
+.fake-link { color: #f87171; font-weight: 600; text-decoration: underline; }
 
-    font-weight: bold;
-}
+.detector-box h2 { font-size: 20px; margin-bottom: 14px; }
 
-.detector-buttons {
-    display: flex;
-
-    gap: 15px;
-}
+.detector-buttons { display: flex; gap: 12px; }
 
 .detector-buttons button {
-    padding: 13px 25px;
-
-    border: none;
-
-    border-radius: 7px;
-
+    padding: 12px 22px;
+    border: 1px solid #00f0ff;
+    border-radius: 6px;
     cursor: pointer;
-
-    font-weight: bold;
-
-    background-color: #2563eb;
-
-    color: white;
-
-    transition: 0.3s;
+    font-weight: 600;
+    background-color: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.detector-buttons button:hover {
-    background-color: #1d4ed8;
-
-    transform: translateY(-2px);
-}
+.detector-buttons button:hover { background-color: #00f0ff; color: #0b1120; }
 
 #detector-result {
-    margin-top: 25px;
-}
-
-.correct-result,
-.wrong-result {
-    padding: 18px;
-
+    margin-top: 18px;
+    padding: 16px;
     border-radius: 8px;
-
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .correct-result {
-    background-color: #dcfce7;
-
-    color: #166534;
+    background-color: rgba(22, 101, 52, 0.3);
+    color: #86efac;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .wrong-result {
-    background-color: #fee2e2;
-
-    color: #991b1b;
+    background-color: rgba(153, 27, 27, 0.3);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
-
-
-/* Warning List */
 
 .warning-list {
-    padding: 30px;
-
-    background-color: #fff7ed;
-
-    border-radius: 14px;
+    padding: 28px;
+    background-color: rgba(120, 53, 15, 0.2);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 12px;
 }
 
-.warning-list h2 {
-    color: #9a3412;
-
-    margin-bottom: 20px;
-}
+.warning-list h2 { color: #fb923c; margin-bottom: 18px; font-size: 18px; }
 
 .warning-item {
     padding: 12px;
-
     margin: 10px 0;
-
-    background-color: white;
-
-    border-radius: 7px;
+    background-color: rgba(249, 115, 22, 0.08);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #fdba74;
 }
 
 
 /* =====================================================
-   14. SAFETY TIPS
+   16. SAFETY TIPS
    ===================================================== */
 
 .safety-section {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 70px 20px;
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+    gap: 24px;
 }
 
 .safety-card {
-    padding: 30px;
-
-    background-color: white;
-
-    border-radius: 14px;
-
+    padding: 28px;
     text-align: center;
-
-    border: 1px solid #e2e8f0;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-
-    transition: 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.safety-card:hover {
-    transform: translateY(-7px);
+.safety-card:hover { transform: translateY(-6px); border-color: #00f0ff; }
 
-    border-color: #38bdf8;
-}
+.safety-card span { font-size: 38px; }
 
-.safety-card span {
-    font-size: 42px;
-}
-
-.safety-card h2 {
-    font-size: 20px;
-
-    color: #1e3a8a;
-
-    margin: 15px 0;
-}
-
-.safety-card p {
-    color: #64748b;
-}
+.safety-card h2 { font-size: 19px; margin: 12px 0 8px; }
 
 
 /* =====================================================
-   15. DO & DON'T
+   17. DO & DONT
    ===================================================== */
 
 .do-dont-section {
     max-width: 1000px;
-
     margin: auto;
-
-    padding: 50px 20px 80px;
-
+    padding: 20px 20px 80px;
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
+    gap: 24px;
 }
 
-.do-box,
-.dont-box {
-    padding: 30px;
-
-    border-radius: 12px;
-}
+.do-box, .dont-box { padding: 28px; border-radius: 12px; }
 
 .do-box {
-    background-color: #ecfdf5;
+    background-color: rgba(22, 101, 52, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.25);
 }
 
 .dont-box {
-    background-color: #fef2f2;
+    background-color: rgba(153, 27, 27, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
-.do-box h2 {
-    color: #166534;
-}
-
-.dont-box h2 {
-    color: #991b1b;
-}
-
-.do-box li,
-.dont-box li {
-    margin: 12px 0;
-}
+.do-box h2 { color: #86efac; }
+.dont-box h2 { color: #fca5a5; }
+.do-box li, .dont-box li { margin: 12px 0; font-size: 15px; }
 
 
 /* =====================================================
-   16. QUIZ
+   18. QUIZ
    ===================================================== */
 
-.quiz-section {
-    padding: 70px 20px;
-}
+.quiz-section { padding: 70px 20px; }
 
-.quiz-container {
-    max-width: 800px;
-
-    margin: auto;
-}
+.quiz-container { max-width: 800px; margin: auto; }
 
 .question {
-    background-color: white;
-
-    padding: 30px;
-
-    margin-bottom: 25px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    padding: 28px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(0, 240, 255, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-.question h2 {
-    font-size: 21px;
-
-    color: #1e3a8a;
-
-    margin-bottom: 20px;
-}
+.question h2 { font-size: 19px; margin-bottom: 18px; }
 
 .question label {
     display: block;
-
-    padding: 13px;
-
+    padding: 12px 14px;
     margin: 8px 0;
-
-    background-color: #f8fafc;
-
-    border-radius: 7px;
-
+    background-color: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    border-radius: 6px;
     cursor: pointer;
-
-    transition: 0.3s;
+    color: #cbd5e1;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 15px;
 }
 
 .question label:hover {
-    background-color: #e0f2fe;
+    background-color: rgba(0, 240, 255, 0.06);
+    border-color: rgba(0, 240, 255, 0.3);
 }
 
-.question input {
-    margin-right: 10px;
-}
+.question input { margin-right: 10px; accent-color: #00f0ff; }
 
 .quiz-submit {
     width: 100%;
-
-    padding: 15px;
-
-    border: none;
-
+    padding: 14px;
+    border: 1px solid #00f0ff;
     border-radius: 8px;
-
-    background-color: #2563eb;
-
-    color: white;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
+    background-color: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-
-    transition: 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.quiz-submit:hover {
-    background-color: #1d4ed8;
-
-    transform: translateY(-2px);
-}
+.quiz-submit:hover { background-color: #00f0ff; color: #0b1120; }
 
 #quiz-result {
-    margin-top: 30px;
-
-    padding: 30px;
-
-    background-color: #eff6ff;
-
+    margin-top: 28px;
+    padding: 28px;
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(0, 240, 255, 0.2);
     border-radius: 12px;
-
     text-align: center;
-
-    color: #1e3a8a;
 }
+
+#quiz-result h2 { margin-bottom: 10px; }
+#quiz-result p { margin: 6px 0; font-size: 16px; }
 
 
 /* =====================================================
-   17. OLD / SIMPLE QUIZ SUPPORT
+   19. SURVEY
    ===================================================== */
 
-.quiz-box {
-    max-width: 750px;
-
-    margin: 30px auto;
-
-    padding: 35px;
-
-    background-color: white;
-
-    border-radius: 12px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-
-    text-align: left;
-}
-
-.quiz-box h3 {
-    color: #1e3a8a;
-
-    font-size: 25px;
-
-    margin-bottom: 15px;
-}
-
-.quiz-box p {
-    margin-bottom: 20px;
-}
-
-.quiz-box button {
-    display: block;
-
-    width: 100%;
-
-    padding: 13px;
-
-    margin: 12px 0;
-
-    border: none;
-
-    border-radius: 6px;
-
-    background-color: #2563eb;
-
-    color: white;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.quiz-box button:hover {
-    background-color: #1d4ed8;
-
-    transform: translateX(4px);
-}
-
-#result {
-    margin-top: 25px;
-
-    padding: 15px;
-
-    border-radius: 6px;
-
-    font-weight: bold;
-
-    background-color: #f1f5f9;
-}
-
-
-/* =====================================================
-   18. SURVEY
-   ===================================================== */
-
-.survey-section {
-    padding: 80px 20px;
-}
+.survey-section { padding: 80px 20px; }
 
 .survey-box {
     max-width: 750px;
-
     margin: auto;
-
-    padding: 50px;
-
+    padding: 48px;
     text-align: center;
-
-    background-color: white;
-
-    border-radius: 15px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
 }
 
-.survey-icon {
-    font-size: 55px;
+.survey-icon { font-size: 52px; margin-bottom: 14px; }
 
-    margin-bottom: 15px;
-}
+.survey-box h2 { margin-bottom: 14px; }
 
-.survey-box h2 {
-    color: #1e3a8a;
-
-    margin-bottom: 15px;
-}
-
-.survey-box p {
-    color: #64748b;
-
-    margin-bottom: 15px;
-}
+.survey-box p { margin-bottom: 14px; font-size: 16px; }
 
 
 /* =====================================================
-   19. CONTACT
+   20. CONTACT
    ===================================================== */
 
 .contact-section {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 70px 20px;
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 40px;
 }
 
-.contact-info {
-    padding: 30px;
-}
+.contact-info { padding: 20px 0; }
 
-.contact-info h2 {
-    color: #1e3a8a;
+.contact-info h2 { margin-bottom: 16px; }
 
-    margin-bottom: 20px;
-}
-
-.contact-info > p {
-    color: #64748b;
-
-    margin-bottom: 30px;
-}
+.contact-info > p { margin-bottom: 28px; }
 
 .contact-item {
-    padding: 20px;
-
-    margin: 15px 0;
-
-    background-color: #f8fafc;
-
+    padding: 18px;
+    margin: 14px 0;
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(0, 240, 255, 0.1);
     border-radius: 10px;
-}
-
-.contact-item strong {
-    display: block;
-
-    margin: 5px 0;
-
-    color: #334155;
-}
-
-.contact-item p {
-    color: #64748b;
-
     font-size: 14px;
 }
 
-.contact-form {
-    margin: 0;
+.contact-item strong { display: block; margin: 4px 0; color: #f1f5f9; font-size: 15px; }
 
-    width: 100%;
-}
-
-
-/* =====================================================
-   20. GENERAL FORM
-   ===================================================== */
-
-form {
-    max-width: 650px;
-
-    margin: 30px auto;
-
-    padding: 35px;
-
-    background-color: white;
-
-    border-radius: 12px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-
-    text-align: left;
-}
-
-form label {
-    display: block;
-
-    font-weight: bold;
-
-    color: #334155;
-
-    margin-top: 12px;
-}
-
-form input,
-form textarea {
-    width: 100%;
-
-    padding: 12px;
-
-    margin-top: 7px;
-
-    border: 1px solid #cbd5e1;
-
-    border-radius: 6px;
-
-    font-size: 15px;
-
-    outline: none;
-
-    transition: 0.3s;
-}
-
-form input:focus,
-form textarea:focus {
-    border-color: #2563eb;
-
-    box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
-}
-
-form textarea {
-    resize: vertical;
-}
-
-form button {
-    padding: 12px 25px;
-
-    margin-top: 20px;
-
-    border: none;
-
-    border-radius: 6px;
-
-    background-color: #2563eb;
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-form button:hover {
-    background-color: #1d4ed8;
-}
+.contact-section .survey-box { margin: 0; text-align: left; }
 
 
 /* =====================================================
@@ -1340,293 +792,85 @@ form button:hover {
    ===================================================== */
 
 footer {
-    padding: 25px 15px;
-
+    padding: 24px 15px;
     text-align: center;
-
-    background-color: #0f172a;
-
-    color: #cbd5e1;
-
+    background-color: #0b1120;
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+    color: #475569;
     font-size: 14px;
 }
 
-footer p {
-    margin: 5px 0;
-}
+footer p { margin: 4px 0; }
 
 
 /* =====================================================
-   22. RESPONSIVE - TABLET
+   22. RESPONSIVE — TABLET
    ===================================================== */
 
 @media (max-width: 1000px) {
-
-    nav {
-        flex-direction: column;
-
-        gap: 15px;
-
-        padding: 18px 20px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 10px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero h2 {
-        font-size: 25px;
-    }
-
-    .scam-section {
-        grid-template-columns: 1fr;
-    }
-
-    .safety-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-section {
-        grid-template-columns: 1fr;
-    }
+    nav { padding: 16px 20px; }
+    .hero h1 { font-size: 48px; }
+    .hero h2 { font-size: 24px; }
+    .scam-section { grid-template-columns: 1fr; }
+    .safety-section { grid-template-columns: repeat(2, 1fr); }
+    .contact-section { grid-template-columns: 1fr; }
 }
 
 
 /* =====================================================
-   23. RESPONSIVE - MOBILE
+   23. RESPONSIVE — MOBILE
    ===================================================== */
 
 @media (max-width: 600px) {
-
-    nav {
-        position: relative;
-
-        padding: 18px 15px;
-    }
-
-    .logo {
-        font-size: 26px;
-    }
-
+    nav { padding: 16px 15px; }
+    .logo { left: 15px; font-size: 22px; }
+    .menu-toggle { display: inline-flex; right: 15px; }
+    .menu-open .menu-toggle span:first-child { transform: translateY(7px) rotate(45deg); }
+    .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    .menu-open .menu-toggle span:last-child { transform: translateY(-7px) rotate(-45deg); }
     .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
-
-        width: 100%;
-
-        gap: 5px;
+        gap: 8px;
+        padding: 16px 15px 22px;
+        background-color: rgba(11, 17, 32, 0.97);
+        border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
     }
-
     .menu a {
-        display: block;
-
-        width: 100%;
-
+        width: min(100%, 420px);
+        padding: 10px 14px;
         text-align: center;
-
-        padding: 7px;
     }
-
-
-    /* Hero */
-
-    .hero {
-        min-height: 500px;
-
-        padding: 40px 20px;
+    .menu-open .menu {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
     }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero h2 {
-        font-size: 22px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-
-    /* Buttons */
-
-    .btn {
-        display: block;
-
-        max-width: 250px;
-
-        margin: 10px auto;
-    }
-
-
-    /* Intro */
-
-    .intro {
-        padding: 55px 20px;
-    }
-
-    .intro h1 {
-        font-size: 32px;
-    }
-
-    .intro h2 {
-        font-size: 25px;
-    }
-
-
-    /* Threats */
-
-    .threat-section {
-        padding: 60px 20px;
-    }
-
-    .threat-section h2 {
-        font-size: 30px;
-    }
-
-    .threat-card {
-        width: 100%;
-
-        max-width: 350px;
-    }
-
-
-    /* Warning */
-
-    .warning-content {
-        flex-direction: column;
-
-        text-align: center;
-
-        border-left: none;
-
-        border-top: 5px solid #f97316;
-    }
-
-
-    /* Features */
-
-    .features {
-        padding: 60px 20px;
-    }
-
-    .features h2 {
-        font-size: 30px;
-    }
-
-    .feature-card {
-        width: 100%;
-
-        max-width: 350px;
-    }
-
-
-    /* Page Header */
-
-    .page-header {
-        padding: 60px 20px;
-    }
-
-    .page-header h1 {
-        font-size: 35px;
-    }
-
-
-    /* Scam Cards */
-
-    .scam-section {
-        grid-template-columns: 1fr;
-
-        padding: 50px 20px;
-    }
-
-
-    /* Detector */
-
-    .detector-section {
-        grid-template-columns: 1fr;
-
-        padding: 50px 20px;
-    }
-
-    .detector-buttons {
-        flex-direction: column;
-    }
-
-    .detector-buttons button {
-        width: 100%;
-    }
-
-
-    /* Safety */
-
-    .safety-section {
-        grid-template-columns: 1fr;
-
-        padding: 50px 20px;
-    }
-
-
-    /* Do & Don't */
-
-    .do-dont-section {
-        grid-template-columns: 1fr;
-
-        padding: 40px 20px 60px;
-    }
-
-
-    /* Quiz */
-
-    .quiz-section {
-        padding: 50px 15px;
-    }
-
-    .question {
-        padding: 22px;
-    }
-
-    .quiz-box {
-        padding: 25px 18px;
-    }
-
-
-    /* Survey */
-
-    .survey-section {
-        padding: 60px 15px;
-    }
-
-    .survey-box {
-        padding: 30px 20px;
-    }
-
-
-    /* Contact */
-
-    .contact-section {
-        grid-template-columns: 1fr;
-
-        padding: 50px 15px;
-    }
-
-    .contact-info {
-        padding: 10px;
-    }
-
-
-    /* Forms */
-
-    form {
-        padding: 25px 18px;
-    }
-
+    .hero h1 { font-size: 36px; }
+    .hero h2 { font-size: 20px; }
+    .hero p  { font-size: 15px; }
+    .cta { padding: 50px 20px; }
+    .cta h2 { font-size: 26px; }
+    .page-header h1 { font-size: 30px; }
+    .threat-card, .feature-card, .objective-card { width: 100%; max-width: 360px; }
+    .scam-section { padding: 50px 16px; }
+    .detector-section { grid-template-columns: 1fr; padding: 50px 16px; }
+    .detector-buttons { flex-direction: column; }
+    .detector-buttons button { width: 100%; }
+    .safety-section { grid-template-columns: 1fr; padding: 50px 16px; }
+    .do-dont-section { grid-template-columns: 1fr; padding: 30px 16px 60px; }
+    .quiz-section { padding: 50px 14px; }
+    .question { padding: 20px; }
+    .survey-section { padding: 60px 14px; }
+    .survey-box { padding: 28px 18px; }
+    .contact-section { padding: 50px 14px; }
 }
